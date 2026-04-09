@@ -9,7 +9,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "echo 'Claude setup loaded: global CLAUDE.md, settings.json, and skills are active. Default workflow: repo-audit first, implementation-plan for non-trivial work, api-check for APIs, dashboard-qa for dashboards/sheets/UI, safe-refactor for existing code changes.'"
+            "command": "echo 'Claude setup loaded: global CLAUDE.md, settings.json, and skills are active. Default workflow: /prd to align on what to build → repo-audit → implementation-plan for non-trivial work → api-check for APIs → dashboard-qa for dashboards/sheets/UI → safe-refactor for existing code changes.'"
           }
         ]
       }
