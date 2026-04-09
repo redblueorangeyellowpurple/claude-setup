@@ -1,5 +1,37 @@
 {
   "env": {
     "CLAUDE_CODE_USE_BEST_PRACTICES": "1"
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Default workflow: before making changes, perform repo-audit. For non-trivial work, also use implementation-plan. If the task involves external APIs, use api-check first. If the task involves dashboards, Google Sheets, multi-tab UI, or formatting changes, use dashboard-qa. If the task involves editing existing code without changing intended behavior, use safe-refactor.'"
+          }
+        ]
+      },
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Reminder after compaction: use repo-audit before changes, implementation-plan for non-trivial work, api-check for APIs, dashboard-qa for dashboards/sheets/UI, and safe-refactor for refactors.'"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Before proceeding: follow the default workflow. Start with repo-audit before code changes. Use implementation-plan for non-trivial work. Use api-check for APIs. Use dashboard-qa for dashboards, sheets, formatting, tabs, or views. Use safe-refactor for existing code changes.'"
+          }
+        ]
+      }
+    ]
   }
 }
