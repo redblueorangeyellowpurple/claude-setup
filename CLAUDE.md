@@ -11,6 +11,9 @@
 - Before editing, identify framework, package manager, test runner, and lint commands.
 - Before declaring work done, run the relevant validation commands if available.
 
+## File Discovery
+- Before claiming a file (e.g. CLAUDE.md, SKILL.md) doesn't exist, use Glob and Grep across the full workspace including ~/.claude and project roots.
+
 ## Before Editing
 - Before editing a file, check for duplicate function definitions or merge conflict markers.
 - Run a quick grep for:
@@ -19,11 +22,19 @@
   - `>>>>`
 - Also check for duplicate `def ` signatures in the target file.
 
+## Python Project Defaults
+- Primary language is Python; always check for existing helper functions before adding new ones to avoid duplication.
+- Prefer editing existing modules over creating new files.
+
 ## Code Quality
 - Keep changes scoped and intentional.
 - Do not introduce unnecessary abstractions.
 - Match existing code style and patterns exactly.
 - Avoid refactoring unrelated parts of the codebase.
+
+## Notion / Dashboard Formatting
+- When making formatting changes (headings, colors, bolding), apply consistently across ALL tabs/sections in a single pass.
+- Verify no duplicate function definitions exist after merges before running code.
 
 ## Testing
 - Always validate changes using the repo's existing test or lint commands where available.
